@@ -1,11 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/usr/local/Cellar/automake'
-let g:netrw_dirhist_2='/usr/local/Cellar/automake/1.14'
-let g:netrw_dirhist_3='/usr/local/Cellar/automake/1.14/bin'
-let g:netrw_dirhist_4='/Users/james/projects'
-let g:netrw_dirhist_5='/Users/james/projects/workspace'
-let g:netrw_dirhist_6='/Users/james/projects/workspace/python'
-let g:netrw_dirhist_7='/Volumes/YetiUSB/Vicarious.app/Contents/Resources/Oculus_Test.app'
-let g:netrw_dirhist_8='/Users/james/Dropbox/workspace/sandbox/python/django/school_square/school_square'
-let g:netrw_dirhist_9='/Users/james/Dropbox/workspace/sandbox/python/django/playing-cards/war/cards'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/Users/james/projects/PyOS/.git'

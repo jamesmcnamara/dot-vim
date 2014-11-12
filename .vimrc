@@ -29,8 +29,6 @@ set list listchars=tab:\|\
 set ignorecase
 set smartcase
 set incsearch
-set hlsearch
-nmap \q :nohlsearch<CR>
 set showcmd
 
 filetype plugin indent on
