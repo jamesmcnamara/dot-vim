@@ -2,7 +2,6 @@ colorscheme ron
 
 " global settings
 set nocompatible
-set backupdir=~/.tmp
 syntax on
 set mouse=a
 set showmatch
@@ -55,7 +54,7 @@ endif
 nmap <Space> i_<Esc>r
 nmap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nmap \e :NERDTreeToggle<CR>
-
+imap jj <Esc>
 "   AutoCommands
 autocmd BufEnter * lcd %:p:h
 
@@ -66,5 +65,5 @@ let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
 let g:jedi#use_splits_not_buffers = "top"
-
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
