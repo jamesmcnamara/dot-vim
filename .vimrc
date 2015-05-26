@@ -1,4 +1,5 @@
-colorscheme ron
+colorscheme navajo-night 
+
 
 " global settings
 set nocompatible
@@ -36,6 +37,7 @@ filetype plugin indent on
 set scrolloff=8
 set sidescrolloff=15
 set whichwrap+=<,>,[,]
+set backspace=2
 
 "   Replace grep with ag
 if executable('ag')
@@ -54,7 +56,19 @@ endif
 nmap <Space> i_<Esc>r
 nmap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nmap \e :NERDTreeToggle<CR>
+nmap \t :TagbarToggle<CR>
+map <A-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 imap jj <Esc>
+
+" Gui Options
+set go=-m
+set go=-t
+if has("gui_running")
+    set guifont=Source\ Code\ Pro\ 12
+    set lines=999 columns=999
+endif
+
 "   AutoCommands
 autocmd BufEnter * lcd %:p:h
 
@@ -66,4 +80,6 @@ let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
 let g:jedi#use_splits_not_buffers = "top"
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_register_as_syntastic_checker = 0
+let g:syntastic_cpp_compiler_options = " -std=c++11 -stlib=libc++"
