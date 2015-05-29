@@ -1,16 +1,13 @@
-set shell=/bin/bash
-set t_Co=256 
+
 " global settings
+set t_Co=256 
 set nocompatible
 syntax on
 set mouse=a
 set showmatch
 set number
 set ruler
-set shell=bash
-" highlight cursor in xy
-"set cursorline
-"set cursorcolumn
+set shell=/bin/bash
 
 " indent settings
 set autoindent
@@ -30,7 +27,6 @@ set smartcase
 set incsearch
 set showcmd
 
-filetype plugin indent on
 
 " custom movement
 set scrolloff=8
@@ -80,15 +76,44 @@ so /home/jmcnamara/.vim/plugin/a.vim
 "   AutoCommands
 autocmd BufEnter * lcd %:p:h
 
-"   Pathogen bundles
-execute pathogen#infect()
+" Vundle
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'kien/ctrlp.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/syntastic'
+
+call vundle#end()
+filetype plugin indent on
+
+" Plugin configs 
+
+"   Ctrl+P
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
+
+"   Jedi
 let g:jedi#use_splits_not_buffers = "top"
+
+"   Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_cpp_compiler_options = " -std=c++11 -stlib=libc++"
+
+"   YouCompleteMe
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_register_as_syntastic_checker = 0
-let g:syntastic_cpp_compiler_options = " -std=c++11 -stlib=libc++"
-let g:alternateExtensions_CPP = "hh"
