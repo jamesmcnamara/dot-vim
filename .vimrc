@@ -1,6 +1,5 @@
-colorscheme navajo-night 
-
-
+set shell=/bin/bash
+set t_Co=256 
 " global settings
 set nocompatible
 syntax on
@@ -57,9 +56,11 @@ nmap <Space> i_<Esc>r
 nmap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nmap \e :NERDTreeToggle<CR>
 nmap \t :TagbarToggle<CR>
+nmap \g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 map <A-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 imap jj <Esc>
+nmap \a :A<CR>
 
 " Gui Options
 set go=-m
@@ -67,7 +68,14 @@ set go=-t
 if has("gui_running")
     set guifont=Source\ Code\ Pro\ 12
     set lines=999 columns=999
+    colorscheme navajo-night 
+else
+    colorscheme ron
 endif
+
+" Sources
+so /home/jmcnamara/.vim/plugin/a.vim 
+
 
 "   AutoCommands
 autocmd BufEnter * lcd %:p:h
@@ -83,3 +91,4 @@ let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_register_as_syntastic_checker = 0
 let g:syntastic_cpp_compiler_options = " -std=c++11 -stlib=libc++"
+let g:alternateExtensions_CPP = "hh"
