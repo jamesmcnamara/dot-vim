@@ -86,6 +86,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'gmarik/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
 
 call vundle#end()
