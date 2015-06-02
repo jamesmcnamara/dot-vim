@@ -57,6 +57,7 @@ map <A-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 imap jj <Esc>
 nmap \a :A<CR>
+imap <C-=> "<-"
 
 " Gui Options
 set go=-m
@@ -88,6 +89,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
@@ -112,7 +114,18 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_cpp_compiler_options = " -std=c++11 -stlib=libc++"
+let g:syntastic_cpp_compiler_options = '-std=c++11 -stlib=libc++'
+let g:syntastic_r_checkers = ['lint']
+
+"   TagBar
+let g:tagbar_type_r = {
+    \ 'ctagstype' : 'r',
+    \ 'kinds'     : [
+        \ 'f:Functions',
+        \ 'g:GlobalVariables',
+        \ 'v:FunctionVariables',
+    \ ]
+\ }
 
 "   YouCompleteMe
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
