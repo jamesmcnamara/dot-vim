@@ -1,4 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/Users/james/projects/PyOS/.git'
 let g:netrw_dirhist_2='/usr/local/share'
+let g:netrw_dirhist_3='/home/jmcnamara/backtester/src/SLUtils/tests/testthat'
+let g:netrw_dirhist_4='/home/jmcnamara/.config/fish'
