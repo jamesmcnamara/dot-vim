@@ -8,6 +8,7 @@ set showmatch
 set number
 set ruler
 set shell=/bin/bash
+set hidden
 
 " indent settings
 set autoindent
@@ -52,11 +53,12 @@ nmap <Space> i_<Esc>r
 nmap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nmap \e :NERDTreeToggle<CR>
 nmap \t :TagbarToggle<CR>
+nmap \a :Scratch<CR>
+nmap \h :A<CR>
 nmap \g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nmap \c :echo col(".")<CR>
 map <A-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-imap jj <Esc>
-nmap \a :A<CR>
 imap <C-=> "<-"
 
 " Gui Options
@@ -88,6 +90,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'mtth/scratch.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 
@@ -115,7 +118,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_compiler_options = '-std=c++11 -stlib=libc++'
-let g:syntastic_r_checkers = ['lint']
+let g:syntastic_r_checkers = ['']
+let g:syntastic_python_checkers = ['python']
 
 "   TagBar
 let g:tagbar_type_r = {
