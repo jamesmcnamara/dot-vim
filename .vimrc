@@ -53,6 +53,8 @@ nmap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nmap \e :NERDTreeToggle<CR>
 nmap \t :TagbarToggle<CR>
 nmap \g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nmap \f :YcmDiag <CR>
+nmap \s :lclose <CR>
 map <A-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 imap jj <Esc>
@@ -130,4 +132,4 @@ let g:tagbar_type_r = {
 "   YouCompleteMe
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_register_as_syntastic_checker = 0
+let g:ycm_enable_diagnostic_signs=1
