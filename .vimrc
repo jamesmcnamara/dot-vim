@@ -9,6 +9,7 @@ set number
 set ruler
 set shell=/bin/bash
 set hidden
+set clipboard=unnamedplus
 
 " indent settings
 set autoindent
@@ -19,7 +20,7 @@ set tabstop=4
 set expandtab
 set showmatch
 
-" highlighting shows tabs as pipes and spaces as underlines
+" highlighting shows tabs as pipes 
 set list listchars=tab:\|\ 
 
 " search options
@@ -49,7 +50,7 @@ if executable('ag')
 endif
 
 "   key mappings
-nmap <Space> i_<Esc>r
+nmap <Space> i <Esc>r
 nmap \e :NERDTreeToggle<CR>
 nmap \t :TagbarToggle<CR>
 nmap \a :Scratch<CR>
@@ -76,6 +77,15 @@ endif
 " Sources
 so /home/jmcnamara/.vim/plugin/a.vim 
 
+" Status line
+set statusline=%t       "tail of the filename
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=%y      "filetype
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
 
 "   AutoCommands
 autocmd BufEnter * lcd %:p:h
@@ -110,9 +120,9 @@ let g:ctrlp_switch_buffer = 0
 let g:jedi#use_splits_not_buffers = "top"
 
 "   Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -123,6 +133,7 @@ let g:syntastic_r_checkers = ['']
 let g:syntastic_python_checkers = ['python']
 
 "   TagBar
+set tags=./tags,tags;
 let g:tagbar_type_r = {
     \ 'ctagstype' : 'r',
     \ 'kinds'     : [
