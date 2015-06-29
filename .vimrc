@@ -13,10 +13,9 @@ set clipboard=unnamedplus
 
 " indent settings
 set autoindent
-set shiftround
-set preserveindent
 set shiftwidth=4
 set tabstop=4
+set softtabstop=4
 set expandtab
 set showmatch
 
@@ -96,6 +95,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'kien/ctrlp.vim'
+Plugin 'dag/vim-fish'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
