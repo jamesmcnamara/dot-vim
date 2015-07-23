@@ -58,6 +58,7 @@ nmap \g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nmap \f :YcmDiag <CR>
 nmap \s :lclose <CR>
 nmap \c :echo col(".")<CR>
+nmap \q :xa<CR>
 map <A-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 imap <C-=> "<-"
