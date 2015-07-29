@@ -59,6 +59,7 @@ nmap \f :YcmDiag <CR>
 nmap \l :lclose <CR>
 nmap \c :echo col(".")<CR>
 nmap \b :Gblame<CR>
+nmap \q :xa<CR>
 map <A-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 imap <C-=> "<-"
