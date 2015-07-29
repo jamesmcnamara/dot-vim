@@ -56,8 +56,9 @@ nmap \a :Scratch<CR>
 nmap \h :A<CR>
 nmap \g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nmap \f :YcmDiag <CR>
-nmap \s :lclose <CR>
+nmap \l :lclose <CR>
 nmap \c :echo col(".")<CR>
+nmap \b :Gblame<CR>
 map <A-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 imap <C-=> "<-"
@@ -96,13 +97,14 @@ call vundle#begin()
 
 Plugin 'kien/ctrlp.vim'
 Plugin 'dag/vim-fish'
+Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'mtth/scratch.vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
