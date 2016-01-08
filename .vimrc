@@ -9,7 +9,7 @@ set number
 set ruler
 set shell=/bin/bash
 set hidden
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 " indent settings
 set autoindent
@@ -76,7 +76,7 @@ else
 endif
 
 " Sources
-so /home/jmcnamara/.vim/plugin/a.vim 
+so ~/.vim/plugin/a.vim 
 
 " Status line
 set statusline=%t       "tail of the filename
@@ -105,7 +105,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'rust-lang/rust.vim'
 Plugin 'mtth/scratch.vim'
+Plugin 'rdnetto/YCM-Generator'
 Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
