@@ -100,6 +100,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'dag/vim-fish'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
@@ -108,7 +109,6 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'rust-lang/rust.vim'
 Plugin 'mtth/scratch.vim'
 Plugin 'rdnetto/YCM-Generator'
-Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
