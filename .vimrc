@@ -96,16 +96,20 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'manicmaniac/coconut.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'dag/vim-fish'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'derekwyatt/vim-scala'
 Plugin 'rust-lang/rust.vim'
 Plugin 'mtth/scratch.vim'
 Plugin 'rdnetto/YCM-Generator'
