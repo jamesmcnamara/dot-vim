@@ -128,6 +128,10 @@ let g:ctrlp_switch_buffer = 0
 "   Jedi
 let g:jedi#use_splits_not_buffers = "top"
 
+" JSX
+let g:jsx_ext_required = 0
+
+
 "   Syntastic
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
