@@ -60,6 +60,8 @@ nmap <C-L> :lclose <CR>
 nmap <C-C> :echo col(".")<CR>
 nmap <C-B> :Gblame<CR>
 nmap <C-Q> :xa<CR>
+nmap <C-C> :xa<CR>
+nmap <C-W> :wa<CR>
 map <A-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 imap <C-=> "<-"
