@@ -50,16 +50,16 @@ endif
 
 "   key mappings
 nmap <Space> i <Esc>r
-nmap \e :NERDTreeToggle<CR>
-nmap \t :TagbarToggle<CR>
-nmap \a :Scratch<CR>
-nmap \h :A<CR>
-nmap \g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nmap \f :YcmDiag <CR>
-nmap \l :lclose <CR>
-nmap \c :echo col(".")<CR>
-nmap \b :Gblame<CR>
-nmap \q :xa<CR>
+nmap <C-E> :NERDTreeToggle<CR>
+nmap <C-T> :TagbarToggle<CR>
+nmap <C-A> :Scratch<CR>
+nmap <C-H> :A<CR>
+nmap <C-G> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nmap <C-F> :YcmDiag <CR>
+nmap <C-L> :lclose <CR>
+nmap <C-C> :echo col(".")<CR>
+nmap <C-B> :Gblame<CR>
+nmap <C-Q> :xa<CR>
 map <A-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 imap <C-=> "<-"
