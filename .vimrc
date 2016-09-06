@@ -61,6 +61,7 @@ nmap <C-C> :echo col(".")<CR>
 nmap <C-B> :Gblame<CR>
 nmap <C-Q> :xa<CR>
 nmap <C-C> :xa<CR>
+nmap <C-X> :x<CR>
 nmap <C-S> :wa<CR>
 map <A-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
@@ -115,6 +116,7 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'rust-lang/rust.vim'
 Plugin 'mtth/scratch.vim'
 Plugin 'rdnetto/YCM-Generator'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
@@ -162,3 +164,9 @@ let g:tagbar_type_r = {
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_enable_diagnostic_signs=1
+let g:ycm_server_python_interpreter='/usr/bin/python'
+let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
+let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+let g:ycm_complete_in_comments = 1 " Completion in comments
+let g:ycm_complete_in_strings = 1 " Completion in string
