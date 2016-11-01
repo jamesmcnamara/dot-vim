@@ -9,13 +9,14 @@ set number
 set ruler
 set shell=/bin/bash
 set hidden
+let mapleader=","
 " set clipboard=unnamedplus
 
 " indent settings
 set autoindent
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 set expandtab
 set showmatch
 
@@ -63,6 +64,7 @@ nmap <C-Q> :xa<CR>
 nmap <C-C> :xa<CR>
 nmap <C-X> :x<CR>
 nmap <C-S> :wa<CR>
+nmap <C-Y> :ImportJSWord<CR>
 map <A-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 imap <C-=> "<-"
@@ -102,17 +104,22 @@ call vundle#begin()
 Plugin 'manicmaniac/coconut.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'dag/vim-fish'
+Plugin 'flowtype/vim-flow'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'Galooshi/vim-import-js'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'conormcd/matchindent.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'vim-scripts/paredit.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'gmarik/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-surround'
 Plugin 'rust-lang/rust.vim'
 Plugin 'mtth/scratch.vim'
 Plugin 'rdnetto/YCM-Generator'
@@ -129,12 +136,15 @@ let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
 
+" Flow
+let g:flow#autoclose = 1
+
 "   Jedi
 let g:jedi#use_splits_not_buffers = "top"
 
 " JSX
 let g:jsx_ext_required = 0
-
+let g:javascript_plugin_flow = 1
 
 "   Syntastic
 " set statusline+=%#warningmsg#
