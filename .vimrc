@@ -102,6 +102,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'manicmaniac/coconut.vim'
+Plugin 'hail2u/vim-css3-syntax'
 Plugin 'kien/ctrlp.vim'
 Plugin 'dag/vim-fish'
 Plugin 'flowtype/vim-flow'
@@ -114,6 +115,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'conormcd/matchindent.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/paredit.vim'
+Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'gmarik/Vundle.vim'
@@ -147,15 +149,17 @@ let g:jsx_ext_required = 0
 let g:javascript_plugin_flow = 1
 
 "   Syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_compiler_options = '-std=c++11 -stlib=libc++'
+" let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
 let g:syntastic_r_checkers = ['']
 let g:syntastic_python_checkers = ['python']
 
@@ -174,7 +178,7 @@ let g:tagbar_type_r = {
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_enable_diagnostic_signs=1
-let g:ycm_server_python_interpreter='/usr/bin/python'
+let g:ycm_server_python_interpreter='/usr/local/bin/python3'
 let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
 let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
 let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
