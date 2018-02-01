@@ -62,11 +62,13 @@ nmap <C-Q> :xa<CR>
 nmap <C-C> :xa<CR>
 nmap <C-X> :x<CR>
 nmap <C-S> :wa<CR>
-nmap <C-D> :ImportJSWord<CR>
-nmap <C-F> :ImportJSGoto<CR>
+autocmd Filetype javascript nmap <C-D> :ImportJSFix<CR>
+autocmd Filetype javascript nmap <C-F> :ImportJSGoto<CR>
+autocmd Filetype ocaml nmap <C-F> :MerlinLocate <CR>
 nmap <C-A> :NERDTreeFind<CR>
-nmap fd :FlowJumpToDef<CR>
-nmap ft :FlowType<CR>
+autocmd Filetype javascript nmap fd :FlowJumpToDef<CR>
+autocmd Filetype javascript nmap ft :FlowType<CR>
+autocmd Filetype ocaml nmap ft :MerlinTypeOf<CR>
 map <A-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 imap <C-=> "<-"
@@ -175,6 +177,7 @@ let g:syntastic_cpp_compiler_options = '-std=c++11 -stlib=libc++'
 " let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
 let g:syntastic_r_checkers = ['']
 let g:syntastic_python_checkers = ['python']
+let g:syntastic_ocaml_checkers = ['merlin']
 
 "   TagBar
 set tags=./tags,tags;
@@ -197,3 +200,6 @@ let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
 let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
 let g:ycm_complete_in_comments = 1 " Completion in comments
 let g:ycm_complete_in_strings = 1 " Completion in string
+
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
