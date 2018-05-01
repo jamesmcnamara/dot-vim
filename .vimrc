@@ -62,13 +62,15 @@ nmap <C-Q> :xa<CR>
 nmap <C-C> :xa<CR>
 nmap <C-X> :x<CR>
 nmap <C-S> :wa<CR>
+nmap <C-A> :NERDTreeFind<CR>
 autocmd Filetype javascript nmap <C-D> :ImportJSFix<CR>
 autocmd Filetype javascript nmap <C-F> :ImportJSGoto<CR>
 autocmd Filetype ocaml nmap <C-F> :MerlinLocate <CR>
-nmap <C-A> :NERDTreeFind<CR>
+autocmd Filetype typescript nmap <C-F> :TsuDefinition<CR>
 autocmd Filetype javascript nmap fd :FlowJumpToDef<CR>
 autocmd Filetype javascript nmap ft :FlowType<CR>
 autocmd Filetype ocaml nmap ft :MerlinTypeOf<CR>
+autocmd Filetype typescript nmap ft :MerlinTypeOf<CR>
 map <A-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 imap <C-=> "<-"
@@ -109,6 +111,7 @@ Plugin 'manicmaniac/coconut.vim'
 Plugin 'tpope/vim-classpath'
 Plugin 'guns/vim-clojure-static'
 Plugin 'guns/vim-clojure-highlight'
+Plugin 'alvan/vim-closetag'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dag/vim-fish'
@@ -138,6 +141,9 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'mtth/scratch.vim'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Quramy/tsuquyomi'
 
 call vundle#end()
 filetype plugin indent on
@@ -155,6 +161,7 @@ let g:ctrlp_working_path_mode = 'ra'
 
 " Flow
 let g:flow#autoclose = 1
+let g:flow#timeout = 4 
 
 "   Jedi
 let g:jedi#use_splits_not_buffers = "top"
@@ -177,7 +184,7 @@ let g:syntastic_cpp_compiler_options = '-std=c++11 -stlib=libc++'
 " let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
 let g:syntastic_r_checkers = ['']
 let g:syntastic_python_checkers = ['python']
-let g:syntastic_ocaml_checkers = ['merlin']
+let g:syntastic_disabled_filetypes = ['ocaml']
 
 "   TagBar
 set tags=./tags,tags;
