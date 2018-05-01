@@ -63,14 +63,13 @@ nmap <C-C> :xa<CR>
 nmap <C-X> :x<CR>
 nmap <C-S> :wa<CR>
 nmap <C-A> :NERDTreeFind<CR>
-autocmd Filetype javascript nmap <C-D> :ImportJSFix<CR>
-autocmd Filetype javascript nmap <C-F> :ImportJSGoto<CR>
-autocmd Filetype ocaml nmap <C-F> :MerlinLocate <CR>
-autocmd Filetype typescript nmap <C-F> :TsuDefinition<CR>
-autocmd Filetype javascript nmap fd :FlowJumpToDef<CR>
-autocmd Filetype javascript nmap ft :FlowType<CR>
-autocmd Filetype ocaml nmap ft :MerlinTypeOf<CR>
-autocmd Filetype typescript nmap ft :MerlinTypeOf<CR>
+au FileType typescript nmap <C-F> :TsuDefinition<CR>
+au FileType typescript nmap <C-D> :TsuImport<CR>
+au FileType javascript.jsx nmap <C-D> :ImportJSFix<CR>
+au FileType javascript.jsx nmap <C-F> :ImportJSGoto<CR>
+au FileType javascript.jsx nmap <C-A> :NERDTreeFind<CR>
+au FileType javascript.jsx nmap fd :FlowJumpToDef<CR>
+au FileType javascript.jsx nmap ft :FlowType<CR>
 map <A-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 imap <C-=> "<-"
@@ -131,6 +130,9 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'ternjs/tern_for_vim' 
 Plugin 'majutsushi/tagbar'
+Plugin 'Quramy/tsuquyomi'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Shougo/vimproc.vim'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-salve'
 Plugin 'derekwyatt/vim-scala'
@@ -161,7 +163,11 @@ let g:ctrlp_working_path_mode = 'ra'
 
 " Flow
 let g:flow#autoclose = 1
+<<<<<<< Updated upstream
 let g:flow#timeout = 4 
+=======
+let g:flow#timeout = 5 
+>>>>>>> Stashed changes
 
 "   Jedi
 let g:jedi#use_splits_not_buffers = "top"
